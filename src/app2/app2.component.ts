@@ -3,7 +3,7 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'app2',
   template: `
-    <div style="margin-top: 100px;">
+    <div>
       This was rendered by App2 which is written in Angular
     </div>
     <a [routerLink]="['/subroute1']" routerLinkActive="active">Angular route 1</a>
