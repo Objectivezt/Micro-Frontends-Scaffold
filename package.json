@@ -3,10 +3,10 @@
   "version": "0.0.1",
   "description": "use webpack with single-spa",
   "scripts": {
-    "watch": "webpack-dev-server --open",
+    "dev": "webpack-dev-server --open",
     "build": "webpack --config webpack.config.js -p"
   },
-  "author": "Joel Denning",
+  "author": "Objectivezt",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
