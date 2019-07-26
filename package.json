@@ -38,10 +38,13 @@
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "reflect-metadata": "^0.1.10",
+    "rx": "^4.1.0",
     "rxjs": "^5.4.2",
     "single-spa": "^3.8.1",
     "single-spa-angular": "^2.2.1",
     "single-spa-react": "^2.9.0",
+    "single-spa-vue": "^1.5.2",
+    "vue": "^2.6.10",
     "zone.js": "^0.8.16"
   }
 }
