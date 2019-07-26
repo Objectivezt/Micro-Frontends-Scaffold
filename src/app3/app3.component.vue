@@ -25,7 +25,6 @@
 import DemoGrid from './demo-grid.component.js';
 import {showFrameworkObservable, getBorder} from 'src/common/colored-border.js';
 export default {
-    name: 'App3',
     components: {
       'demo-grid': DemoGrid,
     },

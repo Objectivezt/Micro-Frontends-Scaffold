@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
@@ -20,6 +21,7 @@ module.exports = {
        */
       'react',
       'react-dom',
+      'vue',
     ],
   },
   output: {
@@ -32,6 +34,10 @@ module.exports = {
         test: /\.js?$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
         loader: 'babel-loader',
+      },
+      {
+        test: /\.vue?$/,
+        loader: ['vue-loader','vue-style-loader'],
       },
       {
         test: /\.tsx?$/,
@@ -68,10 +74,11 @@ module.exports = {
     new ContextReplacementPlugin(
       /(.+)?angular(\\|\/)core(.+)?/,
       path.resolve(__dirname, '../src')
-    )
+    ),
+    new VueLoaderPlugin()
   ],
-  devtool: 'source-map',
-  externals: [],
+  devtool: 'source-map', 
+  externals: ['vue'],
   devServer: {
     historyApiFallback: true
   }

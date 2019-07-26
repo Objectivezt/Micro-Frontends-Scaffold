@@ -2,12 +2,33 @@
   "name": "single-spa-react-angular-vue",
   "version": "0.0.1",
   "description": "use webpack with single-spa",
-  "scripts": {
-    "dev": "webpack-dev-server --open",
-    "build": "webpack --config webpack.config.js -p"
-  },
   "author": "Objectivezt",
-  "license": "MIT",
+  "scripts": {
+    "build": "webpack --config webpack.config.js -p",
+    "dev": "webpack-dev-server --open"
+  },
+  "dependencies": {
+    "@angular/common": "^4.3.3",
+    "@angular/compiler": "^4.3.3",
+    "@angular/core": "^4.3.3",
+    "@angular/platform-browser": "^4.3.3",
+    "@angular/platform-browser-dynamic": "^4.3.3",
+    "@angular/router": "^4.3.6",
+    "antd": "^3.20.2",
+    "core-js": "^2.4.1",
+    "es6-promise": "^4.1.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "reflect-metadata": "^0.1.10",
+    "rx": "^4.1.0",
+    "rxjs": "^5.4.2",
+    "single-spa": "^3.8.1",
+    "single-spa-angular": "^2.2.1",
+    "single-spa-react": "^2.9.0",
+    "single-spa-vue": "^1.5.2",
+    "vue": "^2.6.10",
+    "zone.js": "^0.8.16"
+  },
   "devDependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",
@@ -21,30 +42,13 @@
     "style-loader": "^0.23.1",
     "ts-loader": "^5.3.3",
     "typescript": "^2.4.2",
+    "vue-cli-plugin-single-spa": "^1.0.0-alpha.1",
+    "vue-loader": "^15.7.1",
+    "vue-style-loader": "^4.1.2",
+    "vue-template-compiler": "^2.6.10",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"
   },
-  "dependencies": {
-    "@angular/common": "^4.3.3",
-    "@angular/compiler": "^4.3.3",
-    "@angular/core": "^4.3.3",
-    "@angular/platform-browser": "^4.3.3",
-    "@angular/platform-browser-dynamic": "^4.3.3",
-    "@angular/router": "^4.3.6",
-    "antd": "^3.20.2",
-    "core-js": "^2.4.1",
-    "es6-promise": "^4.1.1",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "reflect-metadata": "^0.1.10",
-    "rx": "^4.1.0",
-    "rxjs": "^5.4.2",
-    "single-spa": "^3.8.1",
-    "single-spa-angular": "^2.2.1",
-    "single-spa-react": "^2.9.0",
-    "single-spa-vue": "^1.5.2",
-    "vue": "^2.6.10",
-    "zone.js": "^0.8.16"
-  }
+  "license": "MIT"
 }

@@ -1,16 +1,13 @@
 import Vue from 'vue/dist/vue.min.js';
 import singleSpaVue from 'single-spa-vue';
-import App3 from "./app3";
+import Application from "./Application.vue";
+
 
 
 const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
-    el: '#vue-app',
-    template: '<App3 />',
-    components: {
-      App3
-    }
+    render: h => h(Application),
   }
 });
 
