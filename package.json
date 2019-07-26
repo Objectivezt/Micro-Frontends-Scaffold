@@ -26,7 +26,8 @@
     "single-spa-angular": "^2.2.1",
     "single-spa-react": "^2.9.0",
     "single-spa-vue": "^1.5.2",
-    "vue": "^2.6.10",
+    "vue": "2.5.17",
+    "vue-router": "^3.0.7",
     "zone.js": "^0.8.16"
   },
   "devDependencies": {
@@ -43,9 +44,9 @@
     "ts-loader": "^5.3.3",
     "typescript": "^2.4.2",
     "vue-cli-plugin-single-spa": "^1.0.0-alpha.1",
-    "vue-loader": "^15.7.1",
-    "vue-style-loader": "^4.1.2",
-    "vue-template-compiler": "^2.6.10",
+    "vue-loader": "15.3.0",
+    "vue-style-loader": "4.1.2",
+    "vue-template-compiler": "2.5.17",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0",
     "webpack-dev-server": "^3.2.1"

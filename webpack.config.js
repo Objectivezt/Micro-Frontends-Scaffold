@@ -22,6 +22,7 @@ module.exports = {
       'react',
       'react-dom',
       'vue',
+      'vue-router',
     ],
   },
   output: {
@@ -63,6 +64,9 @@ module.exports = {
       __dirname,
       'node_modules',
     ],
+    alias: {
+      'vue$': 'vue/dist/vue.esm.js' 
+    }
   },
   optimization: {
     splitChunks: {
@@ -78,7 +82,7 @@ module.exports = {
     new VueLoaderPlugin()
   ],
   devtool: 'source-map', 
-  externals: ['vue'],
+  // externals: ['vue', 'vue-router'],
   devServer: {
     historyApiFallback: true
   }
