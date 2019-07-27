@@ -4,13 +4,12 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 
 module.exports = {
-  mode: 'development',
   entry: {
     'single-spa.config': './src/root-application/root-application.js',
   },
   output: {
     publicPath: '/dist/',
-    filename: '[name].js',
+    filename: '[name].[hash:8].js',
     path: path.resolve(__dirname, 'dist'),
   },
   module: {
