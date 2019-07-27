@@ -5,6 +5,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin')
 const ContextReplacementPlugin = require('webpack/lib/ContextReplacementPlugin');
 
 module.exports = {
+  mode:'development',
   entry: {
     'root-application': 'src/root-application/root-application.js',
     'common-dependencies': [
@@ -45,14 +46,7 @@ module.exports = {
         loader: 'ts-loader',
       },{
         test: /\.css$/,
-        use:[
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          }
-        ]
+        use:[ 'style-loader','css-loader' ]
       }
     ],
   },
@@ -65,8 +59,9 @@ module.exports = {
       'node_modules',
     ],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js' 
-    }
+      vue: 'vue/dist/vue.esm.js',
+    },
+    // extensions:['js','ts','vue']s
   },
   optimization: {
     splitChunks: {
@@ -82,7 +77,7 @@ module.exports = {
     new VueLoaderPlugin()
   ],
   devtool: 'source-map', 
-  // externals: ['vue', 'vue-router'],
+  externals: [],
   devServer: {
     historyApiFallback: true
   }
