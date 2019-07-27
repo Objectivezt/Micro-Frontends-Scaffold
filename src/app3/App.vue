@@ -1,12 +1,6 @@
 <template>
-    <div id="vue">
-        <router-view />
-    </div>
+  <div>
+      <h1>Hello from Vue</h1>
+      <el-button>文字按钮</el-button>
+  </div>
 </template>
-
-<script>
-export default {
-    name: 'App',
-    template:'<div>213</div>'
-}
-</script>
