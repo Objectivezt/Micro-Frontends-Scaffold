@@ -5,7 +5,11 @@
   "author": "Objectivezt",
   "dependencies": {
     "antd": "^3.20.7",
+    "dva": "^2.4.1",
+    "dva-loading": "2.0.6",
     "element-ui": "^2.11.1",
+    "history": "4.7.2",
+    "lodash": "^4.17.5",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-router-dom": "4.3.1",
@@ -13,12 +17,9 @@
     "single-spa": "^4.3.4",
     "single-spa-react": "^2.10.2",
     "single-spa-vue": "^1.4.0",
-    "vue": "^2.6.10",
-    "dva": "^2.4.1",
-    "dva-loading": "2.0.6",
-    "history": "4.7.2",
     "url-polyfill": "^1.1.3",
-    "lodash": "^4.17.5"
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.7"
   },
   "scripts": {
     "start": "webpack-dev-server --open",

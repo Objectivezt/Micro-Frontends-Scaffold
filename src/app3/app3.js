@@ -1,16 +1,12 @@
 import Vue from 'vue';
 import singleSpaVue from 'single-spa-vue';
-import ElementUI from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
-import Hello from './App.vue'
-
-Vue.use(ElementUI);
+import App from './App.vue'
 
 const vueLifecycles = singleSpaVue({
   Vue,
   appOptions: {
     el: '#vue',
-    render: r => r(Hello)
+    render: r => r(App)
   } 
 });
 
