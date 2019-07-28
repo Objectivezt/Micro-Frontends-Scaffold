@@ -14,9 +14,9 @@ Vue.use(ElementUI);
 export default {
     mounted() {
       new Vue({
-        el:'#vue', 
+        el:'#app3', 
         router,
-        template: `<div id="app">
+        template: `<div id="app3">
                 <router-view/>
             </div>`
       })

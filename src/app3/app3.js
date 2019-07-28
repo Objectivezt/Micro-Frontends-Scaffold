@@ -14,10 +14,23 @@ export const bootstrap = [
   vueLifecycles.bootstrap,
 ];
 
-export const mount = [
-  vueLifecycles.mount,
-];
+export function mount(props) {
+  createDomElement();
+  return vueLifecycles.mount(props);
+}
 
 export const unmount = [
   vueLifecycles.unmount,
 ];
+
+function createDomElement() {
+  // Make sure there is a div for us to render into
+  let el = document.getElementById('app3');
+
+  if (!el) {
+      el = document.createElement('div');
+      el.id = 'app3';
+      document.body.appendChild(el);
+  }
+  return el;
+}
