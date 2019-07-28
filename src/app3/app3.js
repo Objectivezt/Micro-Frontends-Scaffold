@@ -7,7 +7,7 @@ const vueLifecycles = singleSpaVue({
   appOptions: {
     el: '#vue',
     render: r => r(App)
-  } 
+  }
 });
 
 export const bootstrap = [
