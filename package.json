@@ -6,14 +6,18 @@
   "dependencies": {
     "antd": "^3.20.7",
     "element-ui": "^2.11.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-router-dom": "^5.0.1",
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "4.3.1",
     "react-transition-group": "^4.1.1",
     "single-spa": "^4.3.4",
     "single-spa-react": "^2.10.2",
     "single-spa-vue": "^1.4.0",
-    "vue": "^2.6.10"
+    "vue": "^2.6.10",
+    "dva": "^2.4.1",
+    "dva-loading": "^3.0.0",
+    "url-polyfill": "^1.1.3",
+    "lodash": "^4.17.5"
   },
   "scripts": {
     "start": "webpack-dev-server --open",
@@ -36,7 +40,14 @@
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.34.0",
     "webpack-cli": "^3.3.4",
-    "webpack-dev-server": "^3.7.2"
+    "webpack-dev-server": "^3.7.2",
+    "@babel/polyfill": "^7.2.5",
+    "@babel/runtime": "7.0.0-beta.55",
+    "babel-plugin-dva-hmr": "^0.4.1",
+    "babel-plugin-module-resolver": "^3.1.3",
+    "babel-plugin-transform-decorators-legacy": "^1.3.5",
+    "babel-preset-stage-2": "^6.24.1",
+    "roadhog": "^2.5.0-beta.4"
   },
   "license": "MIT"
 }
