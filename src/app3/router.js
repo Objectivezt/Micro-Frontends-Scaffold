@@ -6,6 +6,10 @@ export const constantRouterMap = [
     {
         path:'/404',
         component: () => import('./404.vue')
+    },
+    {
+        path:'/cashFlow',
+        component: () => import('./Table.vue')
     }
 ]
 
