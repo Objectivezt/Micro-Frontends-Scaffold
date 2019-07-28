@@ -30,7 +30,11 @@ module.exports = {
       {
         test: /\.(eot|svg|ttf|woff|woff2)$/,
         loader: 'file-loader'
-      }
+      },
+      {
+        test: /\.(tsx|ts)$/,
+        loader: 'ts-loader',
+      },
     ],
   },
   node: {
