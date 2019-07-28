@@ -3,12 +3,6 @@ import ReactDOM from 'react-dom';
 import singleSpaReact from 'single-spa-react';
 import Root from './root.component.js';
 
-import '@babel/polyfill';
-import 'url-polyfill';
-import dva from 'dva';
-// import createHistory from 'history/createHashHistory';
-// import createLoading from 'dva-loading';
-
 const reactLifecycles = singleSpaReact({
   React,
   ReactDOM,
