@@ -6,7 +6,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin')
 module.exports = {
   mode: 'development',
   entry: {
-    'single-spa.config': './src/root-application/root-application.js',
+    'single-spa.config': './src/main.js',
   },
   output: {
     publicPath: '/dist/',

@@ -3,7 +3,7 @@ import dynamic from 'dva/dynamic';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 import { LocaleProvider, Spin } from 'antd'; 
 import { routerRedux, Route, Switch } from 'dva/router';
-import NoFound from './404';
+import NoFound from './containers/404';
 
 const { ConnectedRouter } = routerRedux;
 
@@ -11,7 +11,7 @@ dynamic.setDefaultLoadingComponent(() => {
 	return <Spin size="large" className={styles.globalSpin} />;
 });
 
-function RouterConfig({ history, app }) { 
+function RouterConfig({ history }) { 
 	return (
 		<LocaleProvider locale={zhCN}>
 			<ConnectedRouter history={history}>

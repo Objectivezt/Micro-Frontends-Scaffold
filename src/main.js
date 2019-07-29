@@ -1,18 +1,24 @@
 import * as singleSpa from "single-spa";
 
 singleSpa.registerApplication(
+  "app-root",
+  () => import("./app-root/index.js"),
+  pathPrefix("/")
+);
+
+singleSpa.registerApplication(
   "app-1",
-  () => import("../app1/app1.js"),
+  () => import("./app-react-dva/index.js"),
   pathPrefix("/app1")
 );
 singleSpa.registerApplication(
   "app-2",
-  () => import("../app2/app2.js"),
+  () => import("./app-angular/index.js"),
   pathPrefix("/app2")
 );
 singleSpa.registerApplication(
   "app-3",
-  () => import("../app3/app3.js"),
+  () => import("./app-vue/index.js"),
   pathPrefix("/app3")
 );
 

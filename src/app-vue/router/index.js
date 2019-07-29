@@ -5,11 +5,11 @@ Vue.use(Router);
 export const constantRouterMap = [
     {
         path:'/404',
-        component: () => import('./404.vue')
+        component: () => import('../views/404.vue')
     },
     {
         path:'/cashFlow',
-        component: () => import('./Table.vue')
+        component: () => import('../views/Table.vue')
     }
 ]
 
