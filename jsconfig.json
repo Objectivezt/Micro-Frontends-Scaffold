@@ -1,0 +1,14 @@
+{
+	"compilerOptions": {
+		"baseUrl": ".",
+		"emitDecoratorMetadata": true,
+		"experimentalDecorators": true,
+		"paths": {
+			"mock/*": ["./mock/*"],
+			"@": ["./src/*"], 
+			"@assets/*": ["./src/assets/*"],
+			"@common/*": ["./src/common/*"],
+			"@utils/*": ["./src/utils/*"],
+		}
+	}
+}

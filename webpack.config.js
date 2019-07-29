@@ -42,7 +42,12 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js'
+      vue: 'vue/dist/vue.js', 
+      mock: path.resolve(__dirname, 'mock/'), 
+      '@': path.resolve(__dirname, 'src/'),
+      '@assets': path.resolve(__dirname, 'src/assets/'),
+      '@common': path.resolve(__dirname, 'src/common/'),
+      '@utils': path.resolve(__dirname, 'src/utils/')
     },
     modules: [path.resolve(__dirname, 'node_modules')],
   },

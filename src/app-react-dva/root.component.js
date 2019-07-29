@@ -8,9 +8,7 @@ import {Provider, connect} from 'react-redux';
 import createHistory from 'history/createHashHistory';
 import createLoading from 'dva-loading';
 
-
-const router = require('./router').default;
-
+const router = require('./router/index').default;
 
 export default class Root extends React.Component {
   constructor(props) {
