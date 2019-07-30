@@ -9,14 +9,13 @@ import { getRouterData } from './map';
 const { ConnectedRouter } = routerRedux;
 
 dynamic.setDefaultLoadingComponent(() => {
-	return <Spin size="large" className={styles.globalSpin} />;
+	return <Spin size="large" />;
 });
 
 function RouterConfig({ history, app }) { 
 	const routerData = getRouterData(app);
 	const BlankLayout = routerData['/'].component;
-	console.log(routerData);
-	
+	console.log("routerMap:",routerData);
 	return (
 		<LocaleProvider locale={zhCN}>
 			<ConnectedRouter history={history}>

@@ -1,4 +1,4 @@
-import dynamic from 'dva/dynamic'; 
+import dynamic from './dynamic'; 
 import pathToRegexp from 'path-to-regexp';
 import { createElement } from 'react';
 import { isUrl } from '@/utils/utils';
@@ -27,9 +27,7 @@ const dynamicWrapper = (app, models, component) => {
 			});
 		};
 	}
-
-    console.log(app)
-
+	
 	return dynamic({
 		app,
 		models: () =>
