@@ -58,6 +58,9 @@ export const getRouterData = app => {
 				import('../layouts/BlankLayout')
 			)
 		},
+		'/report': {
+			component: dynamicWrapper(app, [], () => import('../layouts/ReportLayout'))
+		}
 	};
 
 	const getFlatMenuData = function(menus) {
