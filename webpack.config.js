@@ -18,7 +18,28 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader']
-      }, {
+      },
+      {
+        test: /\.less$/,
+        use: [{
+          loader: 'style-loader',
+        }, {
+          loader: 'css-loader', // translates CSS into CommonJS
+        }, {
+          loader: 'less-loader', // compiles Less to CSS
+         options: {
+           modifyVars: {
+             'primary-color': '#1DA57A',
+             'link-color': '#1DA57A',
+             'border-radius-base': '2px',
+             // or
+            //  'hack': `true; @import "your-less-file-path.less";`, // Override with less file
+           },
+           javascriptEnabled: true,
+         },
+        }],
+      },
+      {
         test: /\.js$/,
         exclude: [path.resolve(__dirname, 'node_modules')],
         loader: 'babel-loader',
@@ -32,6 +53,17 @@ module.exports = {
         loader: 'file-loader'
       },
       {
+        test: /\.(png|jpg|gif|ico)$/i,
+        use: [
+          {
+            loader: 'url-loader',
+            options: {
+              limit: 8192,
+            },
+          },
+        ],
+      },
+      {
         test: /\.(tsx|ts)$/,
         loader: 'ts-loader',
       },
@@ -42,12 +74,13 @@ module.exports = {
   },
   resolve: {
     alias: {
-      vue: 'vue/dist/vue.js', 
-      mock: path.resolve(__dirname, 'mock/'), 
+      vue: 'vue/dist/vue.js',
+      mock: path.resolve(__dirname, 'mock/'),
       '@': path.resolve(__dirname, 'src/'),
       '@assets': path.resolve(__dirname, 'src/assets/'),
       '@common': path.resolve(__dirname, 'src/common/'),
-      '@utils': path.resolve(__dirname, 'src/utils/')
+      '@utils': path.resolve(__dirname, 'src/utils/'),
+      "@components": path.resolve(__dirname, "src/components/"),
     },
     modules: [path.resolve(__dirname, 'node_modules')],
   },

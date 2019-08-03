@@ -1,4 +1,4 @@
-import dynamic from './dynamic'; 
+import dynamic from './dynamic';
 import pathToRegexp from 'path-to-regexp';
 import { createElement } from 'react';
 import { isUrl } from '@/utils/utils';
@@ -27,7 +27,7 @@ const dynamicWrapper = (app, models, component) => {
 			});
 		};
 	}
-	
+
 	return dynamic({
 		app,
 		models: () =>
@@ -58,12 +58,19 @@ export const getRouterData = app => {
 				import('../layouts/BlankLayout')
 			)
 		},
+		'/auth': {
+			component: dynamicWrapper(app,
+				['globalModel', 'userModel'], () => import('../layouts/AuthLayout/index'))
+		},
 		'/report': {
 			component: dynamicWrapper(app, [], () => import('../layouts/ReportLayout'))
+		},
+		'/report/loading': {
+			component: dynamicWrapper(app, [], () => import('../layouts/BlankLayout'))
 		}
 	};
 
-	const getFlatMenuData = function(menus) {
+	const getFlatMenuData = function (menus) {
 		let keys = {};
 		menus.forEach(item => {
 			if (item.children) {

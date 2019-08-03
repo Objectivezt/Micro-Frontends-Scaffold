@@ -9,6 +9,7 @@
 			"@assets/*": ["./src/assets/*"],
 			"@common/*": ["./src/common/*"],
 			"@utils/*": ["./src/utils/*"],
+			"@components/*": ["./src/components/*"],
 		}
 	}
 }

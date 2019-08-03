@@ -16,6 +16,7 @@ function RouterConfig({ history, app }) {
 	const routerData = getRouterData(app);
 	const BlankLayout = routerData['/'].component;
 	const ReportLayout = routerData['/report'].component;
+	const AuthLayout = routerData['/auth'].component;
 	console.log("routerMap:",routerData);
 	return (
 		<LocaleProvider locale={zhCN}>
@@ -27,6 +28,8 @@ function RouterConfig({ history, app }) {
 					<Route path="/loading" component={BlankLayout} exact />
 					{/* 报表 */}
 					<Route path="/report" component={ReportLayout} strict />
+					{/* 管理页面 */}
+					<Route path="/auth" component={AuthLayout} strict />
 				</Switch>
 			</ConnectedRouter>
 		</LocaleProvider>

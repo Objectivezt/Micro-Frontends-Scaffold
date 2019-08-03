@@ -47,3 +47,61 @@ function getRenderArr(routes) {
 	}
 	return renderArr;
 }
+
+export function isInArray(array, value) {
+	for (let i = 0; i < array.length; i++) {
+		if (value === array[i]) {
+			return true;
+		}
+	}
+	return false;
+}
+
+export function AuthRouterPass(_this, path) {
+	const { location, history, globalModel = {} } = _this.props;
+	let tempMenuArr = globalModel.baseRouterUrl;
+	if (path) {
+		if (!isInArray(tempMenuArr, path)) {
+			history.push('/auth/exception/403');
+			return false;
+		}
+	} else {
+		if (!isInArray(tempMenuArr, location.pathname)) {
+			if (history.location.pathname === '/auth/exception/403') {
+				return;
+			}
+			history.push('/auth/exception/403');
+			return false;
+		}
+	}
+}
+
+export function getBashRedirect() {
+	const urlParams = new URL(window.location.href);
+	const redirect = urlParams.searchParams.get('redirect');
+	if (redirect) {
+		urlParams.searchParams.delete('redirect');
+		window.history.replaceState(null, 'redirect', urlParams.href);
+	}
+	return redirect;
+}
+
+export function formatterMenu(data, parentPath = '/') {
+	return data.map(item => {
+		let { path } = item;
+		if (!isUrl(path)) {
+			path = parentPath + item.path;
+		}
+		const result = {
+			...item,
+			path
+		};
+		if (item.children) {
+			result.children = formatterMenu(
+				item.children,
+				`${parentPath}${item.path}/`
+			);
+		}
+		return result;
+	});
+}
