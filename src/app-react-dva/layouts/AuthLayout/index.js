@@ -52,6 +52,7 @@ export default class AuthLayout extends React.PureComponent {
 	}
 
 	componentDidMount() {
+		console.log(styles);
 		
 		this.getUserMenu();
 	}

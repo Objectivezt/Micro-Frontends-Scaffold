@@ -1,0 +1,74 @@
+html,
+body,
+:global(#root) {
+	height: 100%;
+}
+
+:global(.ant-layout) {
+	min-height: 100%;
+}
+
+:global(.ant-tabs-bar) {
+	margin: 0 !important;
+}
+
+:global(.ant-tabs-content) {
+	padding: 10px;
+}
+
+canvas {
+	display: block;
+}
+
+body {
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.globalSpin {
+	width: 100%;
+	margin: 40px 0 !important;
+}
+
+// temp fix for https://github.com/ant-design/ant-design/commit/a1fafb5b727b62cb0be29ce6e9eca8f579d4f8b7
+:global {
+	.ant-spin-container {
+		overflow: visible !important;
+	}
+
+	.ant-tabs-bar {
+		border-bottom: 1px solid #fff;
+	}
+
+	.ant-carousel .slick-slide {
+		text-align: center;
+		height: 200px;
+		line-height: 200px;
+		background: #364d79;
+		overflow: hidden;
+	}
+
+	.ant-carousel .slick-slide h3 {
+		color: #fff;
+	}
+}
+
+::-webkit-scrollbar {
+	width: 10px !important;
+	height: 10px !important;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 5px;
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	background: rgba(0, 0, 0, 0.2)
+}
+
+::-webkit-scrollbar-track {
+	box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	-webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+	border-radius: 0;
+	background: rgba(0, 0, 0, 0.1);
+}

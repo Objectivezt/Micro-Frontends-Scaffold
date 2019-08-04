@@ -1,11 +1,9 @@
 import React from 'react';
-import { DatePicker } from 'antd';   
 import '@babel/polyfill';
 import 'url-polyfill';
+import './styles/index.css';
 import dva from 'dva';
 import { browserHistory } from 'dva/router';
-import {Provider, connect} from 'react-redux';
-import createHistory from 'history/createHashHistory';
 import createLoading from 'dva-loading';
 
 const router = require('./router/index').default;
