@@ -1,10 +1,10 @@
 import * as singleSpa from "single-spa";
 
-singleSpa.registerApplication(
-  "app-root",
-  () => import("./app-root/index.js"),
-  pathPrefix("/")
-);
+// singleSpa.registerApplication(
+//   "app-root",
+//   () => import("./app-root/index.js"),
+//   pathPrefix("/")
+// );
 
 singleSpa.registerApplication(
   "app-1",

@@ -1,7 +1,8 @@
 const path = require('path');
 const webpack = require('webpack');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const postcss = require('./postcss.config');
 
 module.exports = {
   mode: 'development',
@@ -17,28 +18,50 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: ['style-loader', 'css-loader']
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1,
+              modules: true,//开启
+              // localIndexName: "[name]__[local]___[hash:base64:5]"//配置class的名字
+            },
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              ident: 'postcss',
+              // plugins: postcss.plugins,
+              // sourceMap: true,
+            },
+          }
+        ]
       },
       {
         test: /\.less$/,
-        use: [{
-          loader: 'style-loader',
-        }, {
-          loader: 'css-loader', // translates CSS into CommonJS
-        }, {
-          loader: 'less-loader', // compiles Less to CSS
-          options: {
-            modifyVars: {
-              //  'primary-color': '#1DA57A',
-              //  'link-color': '#1DA57A',
-              //  'border-radius-base': '2px',
-              // or
-              //  'hack': `true; @import "your-less-file-path.less";`, // Override with less file
-              'hack': "./src/app-react-dva/theme.js"
+        use: [
+          require.resolve('style-loader'),
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders:1,
+              modules: true,//开启
+              // localIndexName: "[name]__[local]___[hash:base64:5]"//配置class的名字
             },
-            javascriptEnabled: true,
           },
-        }],
+          {
+            loader: require.resolve('less-loader'), // compiles Less to CSS
+          },
+          {
+            loader: require.resolve('postcss-loader'),
+            options: {
+              ident: 'postcss',
+              // plugins: postcss.plugins,
+              // sourceMap: true,
+            },
+          }
+        ],
       },
       {
         test: /\.js$/,
@@ -67,7 +90,7 @@ module.exports = {
       {
         test: /\.(tsx|ts)$/,
         loader: 'ts-loader',
-      },
+      }
     ],
   },
   node: {
